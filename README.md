@@ -1,6 +1,6 @@
-# fivem-typescript-boilerplate
+# Persist Vehicles
 
-A boilerplate for creating FiveM resources with TypeScript.
+A script built for ox core to persist vehicle positions through server reboots.
 
 ## Getting Started
 
