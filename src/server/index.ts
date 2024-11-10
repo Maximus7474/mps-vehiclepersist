@@ -8,9 +8,7 @@ const DEBUG = (...args: any[]): void => {
   console.log(`[^4${GetCurrentResourceName()}^7]`, ...args);
 };
 
-on('onResourceStop', async (resource: string) => {
-  if (resource !== GetCurrentResourceName()) return;
-
+const SaveAllVehicles = async () => {
   const vehicles: number[] = GetAllVehicles();
 
   let saved: number = 0;
@@ -38,8 +36,12 @@ on('onResourceStop', async (resource: string) => {
   };
 
   console.log(`Saved ${saved} vehicles to the DB`);
-});
+}
 
+on('onResourceStop', (resource: string) => {
+  if (resource !== GetCurrentResourceName()) return;
+  SaveAllVehicles();
+});
 
 setTimeout(async () => {
   DEBUG(`Respawning vehicles`);
