@@ -12,6 +12,9 @@ setr ox:debug 0 # or 1 to enable, same as for ox_core
 set persistvehicles:useTxAdminEvent 1 # 0 will only save on resource stop, 1 will save on resource stop (default option)
 ```
 
+### Instalation
+1. Run the `base.sql` if not it will not work.
+
 ## Getting Started
 
 ### Node.js v18+
