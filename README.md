@@ -3,6 +3,8 @@
 ![](https://img.shields.io/github/downloads/overextended/ox_core/total?logo=github)
 ![](https://img.shields.io/github/v/release/overextended/ox_core?logo=github) 
 
+![image](https://github.com/user-attachments/assets/2b6c1a71-112a-4e8d-8c48-c1e83054062e)  
+
 A script built for ox core to persist vehicle positions through server reboots.
 When the resource stops it'll save all vehicles to the DB, when it gets started it'll respawn all the previously saved files.
 
