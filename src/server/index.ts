@@ -38,7 +38,8 @@ const SaveAllVehicles = async () => {
   console.log(`Saved ${saved} vehicles to the DB`);
 }
 
-on('onResourceStop', (resource: string) => {
+const useTxAdminEvent: boolean = GetConvarInt('persistvehicles:useTxAdminEvent', 1) === 1;
+on(useTxAdminEvent ? 'txAdmin:events:serverShuttingDown' : 'onResourceStop', (resource: string) => {
   if (resource !== GetCurrentResourceName()) return;
   SaveAllVehicles();
 });
