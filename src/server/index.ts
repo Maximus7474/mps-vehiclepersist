@@ -62,3 +62,8 @@ setTimeout(async () => {
     DEBUG(`Respawned all vehicles`);
   });
 }, 1000);
+
+if (dev) RegisterCommand('saveallvehicles', (src: string) => {
+  if (!IsPlayerAceAllowed(src,'group.admin')) return;
+  SaveAllVehicles();
+}, false);
