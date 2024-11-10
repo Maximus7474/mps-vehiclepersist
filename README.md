@@ -1,7 +1,7 @@
 # Persist Vehicles
 
-![](https://img.shields.io/github/downloads/overextended/ox_core/total?logo=github)
-![](https://img.shields.io/github/v/release/overextended/ox_core?logo=github) 
+![](https://img.shields.io/github/downloads/Maximus7474/mps_vehiclepersist/total?logo=github)
+![](https://img.shields.io/github/v/release/Maximus7474/mps_vehiclepersist?logo=github) 
 
 ![image](https://github.com/user-attachments/assets/2b6c1a71-112a-4e8d-8c48-c1e83054062e)  
 
