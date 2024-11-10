@@ -7,6 +7,9 @@ When the resource stops it'll save all vehicles to the DB, when it gets started 
 ```bash
 # Debug Logs
 setr ox:debug 0 # or 1 to enable, same as for ox_core
+
+# When to save the vehicles
+set persistvehicles:useTxAdminEvent 1 # 0 will only save on resource stop, 1 will save on resource stop (default option)
 ```
 
 ## Getting Started
