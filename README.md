@@ -1,6 +1,13 @@
 # Persist Vehicles
 
 A script built for ox core to persist vehicle positions through server reboots.
+When the resource stops it'll save all vehicles to the DB, when it gets started it'll respawn all the previously saved files.
+
+### Config
+```bash
+# Debug Logs
+setr ox:debug 0 # or 1 to enable, same as for ox_core
+```
 
 ## Getting Started
 
