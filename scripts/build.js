@@ -4,7 +4,6 @@ import { exists, getFiles } from './utils.js';
 import { createBuilder, createFxmanifest } from '@overextended/fx-utils';
 
 const watch = process.argv.includes('--watch');
-const web = await exists('./web');
 
 createBuilder(
   watch,
@@ -26,7 +25,10 @@ createBuilder(
     await createFxmanifest({
       server_scripts: [outfiles.server],
       files: files,
-      dependencies: ['/server:7290', '/onesync'],
+      dependencies: ['/server:10230', '/onesync', '/oxmysql'],
+      metadata: {
+        server_only: 'yes'
+      }
     });
   }
 );
