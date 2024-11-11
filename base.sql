@@ -1,4 +1,3 @@
-
 -- Dumping structure for table ox_core_1ab13f.vehicles_persist
 CREATE TABLE IF NOT EXISTS `vehicles_persist` (
   `id` int(10) unsigned NOT NULL,
@@ -10,4 +9,4 @@ CREATE TABLE IF NOT EXISTS `vehicles_persist` (
   `rotation_z` float NOT NULL DEFAULT 0,
   KEY `vehicleId_FK1` (`id`),
   CONSTRAINT `vehicleId_FK1` FOREIGN KEY (`id`) REFERENCES `vehicles` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+);
