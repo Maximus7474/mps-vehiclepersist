@@ -20,19 +20,22 @@ const SaveAllVehicles = async () => {
 
     const coords: number[] = GetEntityCoords(entityId);
     const rotation: number[] = GetEntityRotation(entityId);
+    const health: number = GetEntityHealth(entityId);
 
-    try {
-      MySQL.insert('INSERT INTO `vehicles_persist` (id, location_x, location_y, location_z, rotation_x, rotation_y, rotation_z) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [
-        vehicle.id, coords[0], coords[1], coords[2], rotation[0], rotation[1], rotation[2]
-      ], DEBUG);
+    if (health >= 50) {
+      try {
+        MySQL.insert('INSERT INTO `vehicles_persist` (id, location_x, location_y, location_z, rotation_x, rotation_y, rotation_z) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [
+          vehicle.id, coords[0], coords[1], coords[2], rotation[0], rotation[1], rotation[2]
+        ], DEBUG);
 
-      vehicle.setStored('parked');    
-      vehicle.despawn(true);
+        vehicle.setStored('parked');
 
-      saved++;
-    } catch (err: any) {
-      DEBUG('Unable to save', vehicle.id, vehicle.plate, 'to DB', err.message);
+        saved++;
+      } catch (err: any) {
+        DEBUG('Unable to save', vehicle.id, vehicle.plate, 'to DB', err.message);
+      }
     }
+    vehicle.despawn(true);
   };
 
   console.log(`Saved ${saved} vehicles to the DB`);
