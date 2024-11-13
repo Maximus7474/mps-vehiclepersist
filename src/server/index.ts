@@ -1,8 +1,10 @@
 import { GetVehicle, SpawnVehicle, OxVehicle } from "@overextended/ox_core/server";
 import { oxmysql as MySQL } from '@overextended/oxmysql';
+import { versionCheck } from '@overextended/ox_lib/server'
 import { persistedVehicle } from "./types";
 
 const dev = GetConvarInt('ox:debug', 0) === 1;
+const doVersionCheck = GetConvarInt('persistvehicles:versioncheck', 1) === 1;
 const DEBUG = (...args: any[]): void => {
   if (!dev) return;
   console.log(`[^4${GetCurrentResourceName()}^7]`, ...args);
@@ -70,3 +72,8 @@ if (dev) RegisterCommand('saveallvehicles', (src: string) => {
   if (!IsPlayerAceAllowed(src,'group.admin')) return;
   SaveAllVehicles();
 }, false);
+
+if (doVersionCheck) {
+  const repository = GetResourceMetadata(GetCurrentResourceName(), 'repository', 0);
+  versionCheck(repository.match(/github\.com\/([^/]+\/[^.]+)/)[1]);
+}
