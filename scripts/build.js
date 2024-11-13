@@ -25,7 +25,7 @@ createBuilder(
     await createFxmanifest({
       server_scripts: [outfiles.server],
       files: files,
-      dependencies: ['/server:10230', '/onesync', '/oxmysql'],
+      dependencies: ['/server:10230', '/onesync', 'oxmysql'],
       metadata: {
         server_only: 'yes'
       }
