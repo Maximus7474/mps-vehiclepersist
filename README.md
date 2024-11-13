@@ -15,6 +15,9 @@ setr ox:debug 0 # or 1 to enable, same as for ox_core
 
 # When to save the vehicles
 set persistvehicles:useTxAdminEvent 1 # 0 will only save on resource stop, 1 will save on resource stop (default option)
+
+# Run a version check on resource start
+set persistvehicles:versioncheck 1 # 0 disables, 1 enables it
 ```
 
 ### Instalation
