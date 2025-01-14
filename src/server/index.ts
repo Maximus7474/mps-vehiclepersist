@@ -1,6 +1,6 @@
 import { GetVehicle, SpawnVehicle, OxVehicle } from "@overextended/ox_core/server";
 import { oxmysql as MySQL } from '@overextended/oxmysql';
-import { versionCheck } from '@overextended/ox_lib/server'
+import { versionCheck, VehicleProperties } from '@overextended/ox_lib/server'
 import { persistedVehicle } from "./types";
 
 const dev = GetConvarInt('ox:debug', 0) === 1;
@@ -23,6 +23,12 @@ const SaveAllVehicles = async () => {
     const coords: number[] = GetEntityCoords(entityId);
     const rotation: number[] = GetEntityRotation(entityId);
     const health: number = GetEntityHealth(entityId);
+
+    const properties: VehicleProperties = vehicle.getProperties();
+    if (properties.engineHealth !== health) {
+      properties.engineHealth = health;
+      vehicle.setProperties(properties);
+    }
 
     if (health >= 50) {
       try {
