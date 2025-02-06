@@ -32,9 +32,9 @@ const SaveAllVehicles = async () => {
 
     if (health >= 50) {
       try {
-        MySQL.insert('INSERT INTO `vehicles_persist` (id, location_x, location_y, location_z, rotation_x, rotation_y, rotation_z) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [
+        await MySQL.insert('INSERT INTO `vehicles_persist` (id, location_x, location_y, location_z, rotation_x, rotation_y, rotation_z) VALUES (?, ?, ?, ?, ?, ?, ?)', [
           vehicle.id, coords[0], coords[1], coords[2], rotation[0], rotation[1], rotation[2]
-        ], DEBUG);
+        ]);
 
         vehicle.setStored('parked');
 
