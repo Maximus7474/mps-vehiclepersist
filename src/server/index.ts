@@ -5,13 +5,13 @@ import { persistedVehicle } from "./types";
 
 const dev = GetConvarInt('ox:debug', 0) === 1;
 const doVersionCheck = GetConvarInt('persistvehicles:versioncheck', 1) === 1;
-const DEBUG = (...args: any[]): void => {
+const DEBUG = (...args: any[]): void => { // eslint-disable-line
   if (!dev) return;
-  console.log(`[^4${GetCurrentResourceName()}^7]`, ...args);
+  console.log(`[^4${GetCurrentResourceName()}^7]`, ...args); // eslint-disable-line
 };
 
 const SaveAllVehicles = async () => {
-  const vehicles: number[] = GetAllVehicles();
+  const vehicles = GetAllVehicles() as number[];
 
   let saved: number = 0;
 
@@ -39,8 +39,8 @@ const SaveAllVehicles = async () => {
         vehicle.setStored('parked');
 
         saved++;
-      } catch (err: any) {
-        DEBUG('Unable to save', vehicle.id, vehicle.plate, 'to DB', err.message);
+      } catch (err: any) { // eslint-disable-line
+        DEBUG('Unable to save', vehicle.id, vehicle.plate, 'to DB', err);
       }
     }
     vehicle.despawn(true);
