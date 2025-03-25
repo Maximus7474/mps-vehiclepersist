@@ -23,8 +23,9 @@ const SaveAllVehicles = async () => {
     const coords: number[] = GetEntityCoords(entityId);
     const rotation: number[] = GetEntityRotation(entityId);
 
-    const engineHealth: number = GetEntityHealth(entityId);
+    const engineHealth: number = GetVehicleEngineHealth(entityId);
     const bodyHealth: number = GetVehicleBodyHealth(entityId);
+    const tankHealth: number = GetVehiclePetrolTankHealth(entityId);
 
     const properties: VehicleProperties = vehicle.getProperties();
     if (properties.engineHealth !== engineHealth) {
@@ -32,6 +33,9 @@ const SaveAllVehicles = async () => {
     }
     if (properties.bodyHealth !== bodyHealth) {
       properties.bodyHealth = bodyHealth;
+    }
+    if (properties.tankHealth !== tankHealth) {
+      properties.tankHealth = tankHealth;
     }
     vehicle.setProperties(properties);
 
