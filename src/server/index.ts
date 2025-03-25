@@ -37,6 +37,22 @@ const SaveAllVehicles = async () => {
     if (properties.tankHealth !== tankHealth) {
       properties.tankHealth = tankHealth;
     }
+
+    // Doesn't seem to always save all burst tyres
+    const tyres: Record<number | string, 1 | 2> = {};
+    for (let i = 0; i < 8; i++) {
+      if (IsVehicleTyreBurst(entityId, i, false) || IsVehicleTyreBurst(entityId, i, true)) {
+        tyres[i] = IsVehicleTyreBurst(entityId, i, true) ? 2 : 1;
+      }
+    }
+    properties.tyres = tyres;
+
+    // Not available from server
+    // const windows: number[] = [];
+    // for (let i = 0; i < 8; i++) {
+    //   if (!IsVehicleWindowIntact(entityId, i)) windows.push(i);
+    // }
+
     vehicle.setProperties(properties);
 
     if (engineHealth > 0) {
