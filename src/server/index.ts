@@ -1,6 +1,6 @@
-import { GetVehicle, SpawnVehicle, OxVehicle } from "@overextended/ox_core/server";
-import { oxmysql as MySQL } from '@overextended/oxmysql';
-import { versionCheck, VehicleProperties } from '@overextended/ox_lib/server'
+import { GetVehicle, SpawnVehicle, OxVehicle } from "@communityox/ox_core/server";
+import { oxmysql as MySQL } from '@communityox/oxmysql';
+import { versionCheck, VehicleProperties } from '@communityox/ox_lib/server'
 import { persistedVehicle } from "./types";
 
 const dev = GetConvarInt('ox:debug', 0) === 1;
