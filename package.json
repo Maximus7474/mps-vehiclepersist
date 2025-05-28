@@ -24,7 +24,7 @@
     "@citizenfx/client": "latest",
     "@citizenfx/server": "latest",
     "@eslint/js": "^9.9.0",
-    "@overextended/fx-utils": "^0.0.4",
+    "@communityox/fx-utils": "^0.0.4",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.16.1",
     "@typescript-eslint/eslint-plugin": "^8.1.0",
@@ -41,8 +41,8 @@
   "dependencies": {
     "@jgoz/esbuild-plugin-typecheck": "^4.0.1",
     "@nativewrappers/fivem": "latest",
-    "@overextended/ox_core": "^1.2.0",
-    "@overextended/ox_lib": "latest",
-    "@overextended/oxmysql": "^1.3.0"
+    "@communityox/ox_core": "^1.2.0",
+    "@communityox/ox_lib": "latest",
+    "@communityox/oxmysql": "^1.3.0"
   }
 }
