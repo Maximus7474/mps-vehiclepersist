@@ -8,21 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@communityox/ox_core':
+        specifier: ^1.2.0
+        version: 1.5.6
+      '@communityox/ox_lib':
+        specifier: latest
+        version: 3.30.9
+      '@communityox/oxmysql':
+        specifier: ^1.3.0
+        version: 1.4.3
       '@jgoz/esbuild-plugin-typecheck':
         specifier: ^4.0.1
         version: 4.0.1(esbuild@0.23.1)(typescript@5.5.4)
       '@nativewrappers/fivem':
         specifier: latest
         version: 0.0.41
-      '@overextended/ox_core':
-        specifier: ^1.2.0
-        version: 1.2.0
-      '@overextended/ox_lib':
-        specifier: latest
-        version: 3.25.0
-      '@overextended/oxmysql':
-        specifier: ^1.3.0
-        version: 1.3.0
     devDependencies:
       '@citizenfx/client':
         specifier: latest
@@ -30,12 +30,12 @@ importers:
       '@citizenfx/server':
         specifier: latest
         version: 2.0.9481-1
+      '@communityox/fx-utils':
+        specifier: ^0.0.4
+        version: 0.0.4
       '@eslint/js':
         specifier: ^9.9.0
         version: 9.9.0
-      '@overextended/fx-utils':
-        specifier: ^0.0.4
-        version: 0.0.4
       '@types/eslint__js':
         specifier: ^8.42.3
         version: 8.42.3
@@ -75,11 +75,78 @@ importers:
 
 packages:
 
+  '@biomejs/biome@1.9.4':
+    resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+
+  '@biomejs/cli-darwin-arm64@1.9.4':
+    resolution: {integrity: sha512-bFBsPWrNvkdKrNCYeAp+xo2HecOGPAy9WyNyB/jKnnedgzl4W4Hb9ZMzYNbf8dMCGmUdSavlYHiR01QaYR58cw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@1.9.4':
+    resolution: {integrity: sha512-ngYBh/+bEedqkSevPVhLP4QfVPCpb+4BBe2p7Xs32dBgs7rh9nY2AIYUL6BgLw1JVXV8GlpKmb/hNiuIxfPfZg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-linux-arm64-musl@1.9.4':
+    resolution: {integrity: sha512-v665Ct9WCRjGa8+kTr0CzApU0+XXtRgwmzIf1SeKSGAv+2scAlW6JR5PMFo6FzqqZ64Po79cKODKf3/AAmECqA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-arm64@1.9.4':
+    resolution: {integrity: sha512-fJIW0+LYujdjUgJJuwesP4EjIBl/N/TcOX3IvIHJQNsAqvV2CHIogsmA94BPG6jZATS4Hi+xv4SkBBQSt1N4/g==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64-musl@1.9.4':
+    resolution: {integrity: sha512-gEhi/jSBhZ2m6wjV530Yy8+fNqG8PAinM3oV7CyO+6c3CEh16Eizm21uHVsyVBEB6RIM8JHIl6AGYCv6Q6Q9Tg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64@1.9.4':
+    resolution: {integrity: sha512-lRCJv/Vi3Vlwmbd6K+oQ0KhLHMAysN8lXoCI7XeHlxaajk06u7G+UsFSO01NAs5iYuWKmVZjmiOzJ0OJmGsMwg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-win32-arm64@1.9.4':
+    resolution: {integrity: sha512-tlbhLk+WXZmgwoIKwHIHEBZUwxml7bRJgk0X2sPyNR3S93cdRq6XulAZRQJ17FYGGzWne0fgrXBKpl7l4M87Hg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@biomejs/cli-win32-x64@1.9.4':
+    resolution: {integrity: sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
+
   '@citizenfx/client@2.0.9481-1':
     resolution: {integrity: sha512-Z9nFH/Xo9WwQs2MURCBpkyfB+wV7KILXvJ+aV9hq5PJOj8dpPN1QAR8PmNP1BfOv7+yMjIYp2liKmzWOhOfk1Q==}
 
   '@citizenfx/server@2.0.9481-1':
     resolution: {integrity: sha512-H1cxJY7rqqVe2SvvBQoaDzy0x3ZEGuVKUmH00wEEJpOi8XoyRfas3Qeq6c7ij+uLSEzLdejizSUvTHqpj4b0hw==}
+
+  '@communityox/fx-utils@0.0.4':
+    resolution: {integrity: sha512-/IAlSwykgwt1BPwk0+7bvSvTGDQDiduss/BWqeWdnOz3Bim9sSrNzJoEI0CE8UMyjjs4UTth7xQdYYT2WGgvcA==}
+    hasBin: true
+
+  '@communityox/ox_core@1.5.6':
+    resolution: {integrity: sha512-Wzn6Ji17LSb4wLEC5NXgErxylNLHhxmhwNpGS+wwUz9R8zGWkNyH8euPgakN3lP8Z2JIUBBnpf3ByvwIGWBEmw==}
+    engines: {node: '>=22.9.0'}
+
+  '@communityox/ox_lib@3.30.9':
+    resolution: {integrity: sha512-f0zNydWVCoE1j7bAhlVFHQyveuTfEojVgqXVUX2byWTsw0ef3soR33Qt/S8R5fSS5Q+Si8SXkkHkco9LnhF7vw==}
+
+  '@communityox/oxmysql@1.4.3':
+    resolution: {integrity: sha512-PWaG9JKpJea/n6QocAyZR/q5ZGiBM+tzxo3gXp5tg8pDqFqkS/s7eBkS0W02lZbw/FrhcIhEDztoUI9rHXxMdQ==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -413,6 +480,12 @@ packages:
   '@nativewrappers/fivem@0.0.41':
     resolution: {integrity: sha512-GUX3N+nlKHj8xT76xtvWUYaQE58UjG18PvjyxMAp6fHAVCP7dktPvX4RwQxg8oQFP9qu4RHZ2DoknVYfrBOGMw==}
 
+  '@nativewrappers/fivem@0.0.86':
+    resolution: {integrity: sha512-NBGw8jQYBIVURfH/jbjz+6NDO+2MTyT2sR5EK7mBhMpHE/eXzIKUpRQgXB5ksxg/+A0KKWmyyGvARbqOLOb9LA==}
+
+  '@nativewrappers/server@0.0.86':
+    resolution: {integrity: sha512-WyY9pWHbmL3X4J1EHUkjWjX2mSyxOhJzDCDnLP5FVEbvtII+AV0MRuMFWvhWVSA7Im8Y8v2IQ0oNnQ8u6NM3sg==}
+
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -424,23 +497,6 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
-
-  '@overextended/fx-utils@0.0.4':
-    resolution: {integrity: sha512-8cv3lO6WbipBhUmMtY9xpYscq73xMrte1okgkMdU5SkadU8z6qeqMsXWSCZz/8rM1cmMXYAYyv6OpiVIzt02iw==}
-    hasBin: true
-
-  '@overextended/ox_core@1.2.0':
-    resolution: {integrity: sha512-tBB3AfYuRI+4tn8B/lo4558doK+tNFx3Wcp0s6ppaRTtNmE8F2xNfuWcgbf+jOmLicNopvG7toaq1P0gwOpgqQ==}
-    engines: {node: '>=16.9.1'}
-
-  '@overextended/ox_lib@3.25.0':
-    resolution: {integrity: sha512-8SEGULr8R+voRwthRpGrTKOjLiAR9aqmFmwOke1gRxaLACMKTk7nFxoqGc45uLdXUkippmqBpRdP9L9Ir5nGjg==}
-
-  '@overextended/ox_lib@3.27.0':
-    resolution: {integrity: sha512-VbiyTzaZRanJ7F7i0tps/8ObjSFerm7oB++zQQmDUrs2Vo2le/xyAvBqMpTGixx1qw86Ly0sl3CQtyJaYNGZPQ==}
-
-  '@overextended/oxmysql@1.3.0':
-    resolution: {integrity: sha512-dpbcAT8HHUQiXyQMb0ei46tUEeCbh9mAgDf4y2vofPp+E3g4QEW8rh0/LuI510VLzJQ7gvTbalQSL84IiCncCw==}
 
   '@rollup/rollup-android-arm-eabi@4.21.0':
     resolution: {integrity: sha512-WTWD8PfoSAJ+qL87lE7votj3syLavxunWhzCnx3XFxFiI/BA/r3X7MUM8dVrH8rb2r4AiO8jJsr3ZjdaftmnfA==}
@@ -641,6 +697,7 @@ packages:
 
   boolean@3.2.0:
     resolution: {integrity: sha512-d0II/GO9uf9lfUHH2BQsjxzRJZBdsjgsBiW4BvhWk/3qoKwQFjIDVN19PfX8F2D/r9PCMTtLWjYVCFrpeYUzsw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -908,8 +965,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  mariadb@3.4.0:
-    resolution: {integrity: sha512-hdRPcAzs+MTxK5VG1thBW18gGTlw6yWBe9YnLB65GLo7q0fO5DWsgomIevV/pXSaWRmD3qi6ka4oSFRTExRiEQ==}
+  mariadb@3.4.2:
+    resolution: {integrity: sha512-B17vhYRHDMQ1XXvhSWsvKJbpw3Q8B6py93ThBEXZXSgxIbqnKqoHK1RzoPLbIxoEzWN3jA86ZaMMc3IG6L5wsw==}
     engines: {node: '>= 14'}
 
   merge2@1.4.1:
@@ -1155,9 +1212,66 @@ packages:
 
 snapshots:
 
+  '@biomejs/biome@1.9.4':
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 1.9.4
+      '@biomejs/cli-darwin-x64': 1.9.4
+      '@biomejs/cli-linux-arm64': 1.9.4
+      '@biomejs/cli-linux-arm64-musl': 1.9.4
+      '@biomejs/cli-linux-x64': 1.9.4
+      '@biomejs/cli-linux-x64-musl': 1.9.4
+      '@biomejs/cli-win32-arm64': 1.9.4
+      '@biomejs/cli-win32-x64': 1.9.4
+
+  '@biomejs/cli-darwin-arm64@1.9.4':
+    optional: true
+
+  '@biomejs/cli-darwin-x64@1.9.4':
+    optional: true
+
+  '@biomejs/cli-linux-arm64-musl@1.9.4':
+    optional: true
+
+  '@biomejs/cli-linux-arm64@1.9.4':
+    optional: true
+
+  '@biomejs/cli-linux-x64-musl@1.9.4':
+    optional: true
+
+  '@biomejs/cli-linux-x64@1.9.4':
+    optional: true
+
+  '@biomejs/cli-win32-arm64@1.9.4':
+    optional: true
+
+  '@biomejs/cli-win32-x64@1.9.4':
+    optional: true
+
   '@citizenfx/client@2.0.9481-1': {}
 
   '@citizenfx/server@2.0.9481-1': {}
+
+  '@communityox/fx-utils@0.0.4':
+    dependencies:
+      esbuild: 0.23.1
+      tsc-alias: 1.8.10
+
+  '@communityox/ox_core@1.5.6':
+    dependencies:
+      '@biomejs/biome': 1.9.4
+      '@communityox/ox_lib': 3.30.9
+      '@nativewrappers/fivem': 0.0.86
+      '@nativewrappers/server': 0.0.86
+      mariadb: 3.4.2
+
+  '@communityox/ox_lib@3.30.9':
+    dependencies:
+      '@nativewrappers/client': 1.7.33
+      csstype: 3.1.3
+      fast-printf: 1.6.9
+      typescript: 5.5.4
+
+  '@communityox/oxmysql@1.4.3': {}
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
@@ -1346,6 +1460,10 @@ snapshots:
 
   '@nativewrappers/fivem@0.0.41': {}
 
+  '@nativewrappers/fivem@0.0.86': {}
+
+  '@nativewrappers/server@0.0.86': {}
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -1357,33 +1475,6 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
-
-  '@overextended/fx-utils@0.0.4':
-    dependencies:
-      esbuild: 0.23.1
-      tsc-alias: 1.8.10
-
-  '@overextended/ox_core@1.2.0':
-    dependencies:
-      '@nativewrappers/fivem': 0.0.41
-      '@overextended/ox_lib': 3.27.0
-      mariadb: 3.4.0
-
-  '@overextended/ox_lib@3.25.0':
-    dependencies:
-      '@nativewrappers/client': 1.7.33
-      csstype: 3.1.3
-      fast-printf: 1.6.9
-      typescript: 5.5.4
-
-  '@overextended/ox_lib@3.27.0':
-    dependencies:
-      '@nativewrappers/client': 1.7.33
-      csstype: 3.1.3
-      fast-printf: 1.6.9
-      typescript: 5.5.4
-
-  '@overextended/oxmysql@1.3.0': {}
 
   '@rollup/rollup-android-arm-eabi@4.21.0':
     optional: true
@@ -1886,7 +1977,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  mariadb@3.4.0:
+  mariadb@3.4.2:
     dependencies:
       '@types/geojson': 7946.0.14
       '@types/node': 22.9.0
