@@ -73,11 +73,7 @@ To build and create GitHub releases, tag your commit (e.g. `v1.0.0`) and push it
 
 - [/dist/](dist)
   - Compiled project files.
-- [/locales/](locales)
-  - JSON files used for translations with [ox_lib](https://overextended.dev/ox_lib/Modules/Locale/Shared).
 - [/scripts/](scripts)
   - Scripts used in the development process, but not part of the compiled resource.
 - [/src/](src)
   - Project source code.
-- [/static/](static)
-  - Files to include with the resource that aren't compiled or loaded (e.g. config).
